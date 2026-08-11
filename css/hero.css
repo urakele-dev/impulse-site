@@ -1,0 +1,285 @@
+/* ==========================================================================
+   hero.css — первый экран: УТП, кнопки, соцдоказательства, CSS-мокап бота
+   ========================================================================== */
+
+.hero {
+  position: relative;
+  padding-block: 56px;
+  overflow: hidden;
+  background-image: radial-gradient(circle at 50% 0%, rgba(124, 92, 255, 0.25), transparent 60%);
+}
+
+.hero__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+/* Заголовок с УТП */
+.hero__title {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+/* Градиентный акцент на ключевых словах */
+.hero__accent {
+  background-image: var(--gradient-accent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero__subtitle {
+  margin: 16px 0 32px;
+  max-width: 520px;
+  color: var(--color-text-muted);
+  font-size: 1.0625rem;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* Социальное доказательство: цифры */
+.hero__stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px 40px;
+  margin-top: 40px;
+  padding-top: 28px;
+  border-top: 1px solid var(--color-border);
+}
+
+.hero__stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.hero__stat-value {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 800;
+  background-image: var(--gradient-accent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero__stat-label {
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+}
+
+/* ---------- Визуал: мокап чата с ботом ---------- */
+
+.hero__visual {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  margin-inline: auto;
+}
+
+/* Градиентное пятно позади мокапа */
+.hero__blob {
+  position: absolute;
+  inset: -10% -15%;
+  background: radial-gradient(circle at 30% 30%, rgba(124, 92, 255, 0.35), transparent 60%),
+              radial-gradient(circle at 70% 70%, rgba(59, 130, 246, 0.3), transparent 60%);
+  filter: blur(30px);
+  animation: hero-pulse 6s ease-in-out infinite;
+}
+
+/* Окно браузера с чатом */
+.hero__mockup {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  box-shadow: var(--shadow-card);
+  animation: hero-float 6s ease-in-out infinite;
+}
+
+.hero__mockup-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.hero__mockup-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.hero__mockup-dot:first-child {
+  background-color: rgba(124, 92, 255, 0.8);
+}
+
+.hero__mockup-url {
+  margin-left: 10px;
+  padding: 4px 12px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.06);
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
+}
+
+.hero__mockup-chat {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px 16px 24px;
+}
+
+/* Пузыри сообщений */
+.hero__bubble {
+  max-width: 80%;
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-size: 0.875rem;
+  line-height: 1.45;
+}
+
+.hero__bubble--bot {
+  align-self: flex-start;
+  background-image: var(--gradient-accent);
+  color: var(--color-text);
+  border-bottom-left-radius: 4px;
+}
+
+.hero__bubble--user {
+  align-self: flex-end;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: var(--color-text-muted);
+  border-bottom-right-radius: 4px;
+}
+
+/* Индикатор «бот печатает» */
+.hero__bubble--typing {
+  display: inline-flex;
+  gap: 5px;
+  padding: 14px 16px;
+}
+
+.hero__bubble--typing span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.85);
+  animation: hero-typing 1.2s ease-in-out infinite;
+}
+
+.hero__bubble--typing span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.hero__bubble--typing span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+/* Плавающие бейджи */
+.hero__badge {
+  position: absolute;
+  padding: 8px 14px;
+  border-radius: 12px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-card);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.hero__badge--top {
+  top: -14px;
+  right: -8px;
+  animation: hero-float 5s ease-in-out infinite reverse;
+}
+
+.hero__badge--bottom {
+  bottom: -14px;
+  left: -8px;
+  animation: hero-float 7s ease-in-out infinite;
+}
+
+.hero__badge-accent {
+  background-image: var(--gradient-accent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Появление контента при загрузке */
+.hero__content {
+  animation: hero-fade-in 0.7s ease-out both;
+}
+
+/* ---------- Анимации ---------- */
+
+@keyframes hero-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes hero-pulse {
+  0%, 100% { opacity: 0.7; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+@keyframes hero-typing {
+  0%, 100% { opacity: 0.3; transform: translateY(0); }
+  50% { opacity: 1; transform: translateY(-3px); }
+}
+
+@keyframes hero-fade-in {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Уважаем настройку уменьшенного движения */
+@media (prefers-reduced-motion: reduce) {
+  .hero__content,
+  .hero__mockup,
+  .hero__blob,
+  .hero__badge,
+  .hero__bubble--typing span {
+    animation: none;
+  }
+}
+
+/* Планшеты */
+@media (min-width: 768px) {
+  .hero {
+    padding-block: 80px;
+  }
+
+  .hero__title {
+    font-size: 2.75rem;
+  }
+}
+
+/* Десктоп: текст слева, визуал справа */
+@media (min-width: 1024px) {
+  .hero {
+    padding-block: 96px;
+  }
+
+  .hero__grid {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 48px;
+  }
+
+  .hero__title {
+    font-size: 3.25rem;
+  }
+}

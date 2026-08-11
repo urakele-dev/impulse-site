@@ -1,0 +1,5 @@
+- Target: [CODE] TASK 2.1 Replace placeholder content with real studio content
+- Target Files: index.html, images/README.md
+- Instruction: Studio name is «Импульс digital». Replace portfolio preview divs with real <img> tags (WebP, alt text required) and update placeholder contacts (email, phone, Telegram) with real studio data. Keep exactly one H1, H1-H3 hierarchy, no inline styles, no Lorem ipsum. Comments in Russian. Edit index.html (>200 lines) only via temp_patch.py + backup protocol.
+- Constraints: mobile-first dark theme (#0f1117), cards radius 12-16px, fonts Inter/Manrope.
+- Acceptance for PO: Open index.html in a browser. Portfolio cards show real images, contacts section shows real email/phone. No grey "Скриншот проекта" placeholders remain.

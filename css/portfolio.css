@@ -1,0 +1,54 @@
+/* ==========================================================================
+   portfolio.css — секция «Портфолио»: карточки проектов
+   ========================================================================== */
+
+.portfolio__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.portfolio__card {
+  overflow: hidden;
+}
+
+/* Заглушка превью проекта (изображения добавляются на этапе наполнения) */
+.portfolio__preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 180px;
+  background-image: linear-gradient(135deg, rgba(124, 92, 255, 0.25), rgba(59, 130, 246, 0.25));
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+}
+
+.portfolio__body {
+  padding: 20px 24px 24px;
+}
+
+.portfolio__card-title {
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.portfolio__card p {
+  color: var(--color-text-muted);
+  font-size: 0.9375rem;
+}
+
+/* Планшеты: две карточки в ряд */
+@media (min-width: 600px) {
+  .portfolio__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Десктоп: три карточки в ряд */
+@media (min-width: 1024px) {
+  .portfolio__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

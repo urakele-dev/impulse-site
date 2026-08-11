@@ -1,0 +1,53 @@
+/* ==========================================================================
+   footer.css — подвал: логотип, навигация, копирайт
+   ========================================================================== */
+
+.footer {
+  border-top: 1px solid var(--color-border);
+  padding-block: 32px;
+}
+
+.footer__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+}
+
+.footer__logo {
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  font-weight: 800;
+}
+
+.footer__nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 20px;
+}
+
+.footer__nav-link {
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+  transition: color 0.2s ease;
+}
+
+.footer__nav-link:hover {
+  color: var(--color-text);
+}
+
+.footer__copy {
+  color: var(--color-text-muted);
+  font-size: 0.8125rem;
+}
+
+/* Десктоп: элементы в одну строку */
+@media (min-width: 768px) {
+  .footer__inner {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+}

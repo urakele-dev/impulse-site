@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Импульс Digital</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/services.css">
+    <link rel="stylesheet" href="css/process.css">
+    <link rel="stylesheet" href="css/portfolio.css">
+    <link rel="stylesheet" href="css/pricing.css">
+    <link rel="stylesheet" href="css/faq.css">
+    <link rel="stylesheet" href="css/contacts.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+    <header id="header">
+        <div class="container">
+            <a href="#hero">Импульс<span>digital</span></a>
+            <nav id="site-nav">
+                <a href="#services">Услуги</a>
+                <a href="#portfolio">Портфолио</a>
+                <a href="#pricing">Тарифы</a>
+                <a href="#contacts">Контакты</a>
+            </nav>
+            <button class="order-btn">Заказать</button>
+            <button id="burger" aria-label="Открыть меню"><span></span></button>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="hero">
+            <div class="container">
+                <h1>Разработка сайтов и ботов</h1>
+                <p>Автоматизируем ваш бизнес с помощью современных технологий.</p>
+            </div>
+        </section>
+
+        <section id="services" class="services">
+            <div class="container">
+                <h2>Услуги</h2>
+            </div>
+        </section>
+
+        <section id="portfolio" class="portfolio">
+            <div class="container">
+                <h2>Портфолио</h2>
+            </div>
+        </section>
+
+        <section id="pricing" class="pricing">
+            <div class="container">
+                <h2>Тарифы</h2>
+            </div>
+        </section>
+
+        <section id="faq" class="faq">
+            <div class="container">
+                <h2>FAQ</h2>
+                <details>
+                    <summary>Как происходит оплата?</summary>
+                    <p>Работаем по предоплате 50%, остаток — после сдачи проекта.</p>
+                </details>
+                <details>
+                    <summary>Что нужно от меня?</summary>
+                    <p>Техническое задание, логотип и контент (тексты/фото).</p>
+                </details>
+                <details>
+                    <summary>Входят ли правки в стоимость?</summary>
+                    <p>Да, до 3 итераций правок включены в каждый тариф.</p>
+                </details>
+                <details>
+                    <summary>Есть ли гарантия?</summary>
+                    <p>Да, техническая гарантия на работоспособность — 6 месяцев.</p>
+                </details>
+                <details>
+                    <summary>Поддержка после запуска?</summary>
+                    <p>Предлагаем ежемесячное сопровождение по фиксированной цене.</p>
+                </details>
+                <details>
+                    <summary>Кому нужен Telegram-бот?</summary>
+                    <p>Бизнесу для автоматизации записи, продаж и поддержки клиентов.</p>
+                </details>
+            </div>
+        </section>
+
+        <section id="contacts" class="contacts">
+            <div class="container">
+                <h2>Контакты</h2>
+                <div class="contacts-wrapper">
+                    <form id="contactForm">
+                        <input type="text" id="name" placeholder="Ваше имя" required>
+                        <input type="text" id="contact" placeholder="Телефон или Telegram" required>
+                        <textarea id="message" placeholder="Описание задачи" required></textarea>
+                        <button type="submit">Отправить</button>
+                    </form>
+                    <div class="contacts-info">
+                        <a href="https://t.me/impulse_digital">Telegram</a>
+                        <a href="https://wa.me/79990000000">WhatsApp</a>
+                        <a href="mailto:hello@impulse.digital">hello@impulse.digital</a>
+                        <p>+7 (999) 000-00-00</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__inner">
+            <a class="footer__logo" href="#hero">Импульс<span class="header__logo-accent">digital</span></a>
+            <nav class="footer__nav" aria-label="Навигация в подвале">
+                <a class="footer__nav-link" href="#services">Услуги</a>
+                <a class="footer__nav-link" href="#portfolio">Портфолио</a>
+                <a class="footer__nav-link" href="#pricing">Тарифы</a>
+                <a class="footer__nav-link" href="#contacts">Контакты</a>
+            </nav>
+            <p class="footer__copy">© <span id="year">2026</span> Студия «Импульс». Все права защищены.</p>
+        </div>
+    </footer>
+
+    <button id="scrollTop" onclick="window.scrollTo(0,0)">Наверх</button>
+    <script src="js/main.js"></script>
+</body>
+</html>

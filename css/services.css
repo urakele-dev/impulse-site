@@ -1,0 +1,83 @@
+/* ==========================================================================
+   services.css — секция «Услуги»: карточки с иконкой, ценой и кнопкой
+   ========================================================================== */
+
+.services__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.services__card {
+  display: flex;
+  flex-direction: column;
+  padding: 28px 24px;
+}
+
+/* Контейнер иконки */
+.services__card-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 18px;
+  border-radius: 14px;
+  color: var(--color-accent-violet);
+  background-color: rgba(124, 92, 255, 0.12);
+  border: 1px solid rgba(124, 92, 255, 0.25);
+  transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.services__card-title {
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.services__card-text {
+  margin-bottom: 16px;
+  color: var(--color-text-muted);
+  font-size: 0.9375rem;
+}
+
+/* Цена с градиентом */
+.services__card-price {
+  margin-bottom: 20px;
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 800;
+  background-image: var(--gradient-accent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Кнопка «Подробнее» прижата к низу карточки */
+.services__card-btn {
+  margin-top: auto;
+  width: 100%;
+}
+
+/* Hover: иконка загорается градиентом (подъём карточки — из base.css) */
+.services__card:hover .services__card-icon {
+  background-color: transparent;
+  background-image: var(--gradient-accent);
+  color: var(--color-text);
+  transform: scale(1.06);
+}
+
+/* Планшеты: две карточки в ряд */
+@media (min-width: 600px) {
+  .services__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Десктоп: три карточки в ряд */
+@media (min-width: 1024px) {
+  .services__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

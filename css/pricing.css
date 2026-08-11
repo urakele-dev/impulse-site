@@ -1,0 +1,55 @@
+/* ==========================================================================
+   pricing.css — секция «Тарифы»: карточки с ценами
+   ========================================================================== */
+
+.pricing__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.pricing__card {
+  display: flex;
+  flex-direction: column;
+  padding: 28px 24px;
+}
+
+.pricing__card-title {
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.pricing__price {
+  margin: 12px 0 16px;
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 800;
+}
+
+.pricing__features {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+  color: var(--color-text-muted);
+  font-size: 0.9375rem;
+}
+
+/* Кнопка прижимается к низу карточки */
+.pricing__card .btn {
+  margin-top: auto;
+}
+
+/* Выделенный тариф */
+.pricing__card--featured {
+  border-color: var(--color-accent-violet);
+  background-image: linear-gradient(180deg, rgba(124, 92, 255, 0.12) 0%, var(--color-surface) 100%);
+}
+
+/* Десктоп: три тарифа в ряд */
+@media (min-width: 900px) {
+  .pricing__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

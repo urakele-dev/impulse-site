@@ -1,0 +1,135 @@
+/* ==========================================================================
+   process.css — секция «Как мы работаем»: таймлайн из 5 шагов
+   ========================================================================== */
+
+/* Вертикальный таймлайн (mobile-first) */
+.process__list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Линия, соединяющая маркеры шагов */
+.process__list::before {
+  content: "";
+  position: absolute;
+  top: 26px;
+  bottom: 26px;
+  left: 25px;
+  width: 2px;
+  background-image: linear-gradient(180deg, var(--color-accent-violet), var(--color-accent-blue));
+  opacity: 0.35;
+}
+
+.process__item {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+/* Маркер с номером шага */
+.process__marker {
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background-color: var(--color-surface);
+  border: 1px solid rgba(124, 92, 255, 0.4);
+  /* Ободок в цвет фона — линия не просвечивает сквозь маркер */
+  box-shadow: 0 0 0 6px var(--color-bg);
+  transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+/* Номер шага с градиентом */
+.process__marker span {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 800;
+  background-image: var(--gradient-accent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Карточка шага */
+.process__card {
+  flex: 1;
+  padding: 20px 24px;
+}
+
+.process__card-title {
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.process__card-text {
+  margin-bottom: 12px;
+  color: var(--color-text-muted);
+  font-size: 0.9375rem;
+}
+
+/* Чип со сроком шага */
+.process__duration {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background-color: rgba(124, 92, 255, 0.12);
+  border: 1px solid rgba(124, 92, 255, 0.25);
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* Hover: маркер загорается градиентом (подъём карточки — из base.css) */
+.process__item:hover .process__marker {
+  background-color: transparent;
+  background-image: var(--gradient-accent);
+  transform: scale(1.06);
+}
+
+.process__item:hover .process__marker span {
+  background-image: none;
+  color: var(--color-text);
+}
+
+/* Десктоп: горизонтальный таймлайн */
+@media (min-width: 1024px) {
+  .process__list {
+    flex-direction: row;
+    gap: 16px;
+  }
+
+  .process__list::before {
+    top: 25px;
+    bottom: auto;
+    left: 26px;
+    right: 26px;
+    width: auto;
+    height: 2px;
+    background-image: linear-gradient(90deg, var(--color-accent-violet), var(--color-accent-blue));
+  }
+
+  .process__item {
+    flex: 1;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .process__marker {
+    align-self: flex-start;
+  }
+
+  .process__card {
+    width: 100%;
+    height: 100%;
+  }
+}

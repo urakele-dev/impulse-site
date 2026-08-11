@@ -1,0 +1,172 @@
+/* ==========================================================================
+   header.css — шапка: логотип, навигация, кнопка «Заказать», мобильное меню
+   ========================================================================== */
+
+/* Шапка фиксирована при скролле */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: rgba(15, 17, 23, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid transparent;
+  transition: background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Компенсация высоты фиксированной шапки */
+body {
+  padding-top: 64px;
+}
+
+/* Якорные секции: заголовок не прячется под фиксированной шапкой */
+section[id] {
+  scroll-margin-top: 84px;
+}
+
+/* Состояние шапки после начала прокрутки */
+.header--scrolled {
+  background-color: rgba(15, 17, 23, 0.97);
+  border-bottom-color: var(--color-border);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  height: 64px;
+}
+
+/* Логотип */
+.header__logo {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.header__logo-accent {
+  background-image: var(--gradient-accent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Мобильное меню: выпадающая панель, по умолчанию скрыта */
+.header__nav {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px 20px 24px;
+  background-color: rgba(15, 17, 23, 0.98);
+  border-bottom: 1px solid var(--color-border);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+}
+
+.header__nav.is-open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.header__nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.header__nav-link {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 10px;
+  color: var(--color-text-muted);
+  font-weight: 500;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.header__nav-link:hover {
+  color: var(--color-text);
+  background-color: var(--color-surface);
+}
+
+/* Кнопка «Заказать» в мобильном меню — на всю ширину */
+.header__cta {
+  width: 100%;
+}
+
+/* Кнопка-бургер */
+.header__burger {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  padding: 9px;
+  border-radius: 10px;
+}
+
+.header__burger-line {
+  width: 22px;
+  height: 2px;
+  border-radius: 2px;
+  background-image: var(--gradient-accent);
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+/* Бургер превращается в крестик при открытом меню */
+.header__burger.is-open .header__burger-line:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.header__burger.is-open .header__burger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.header__burger.is-open .header__burger-line:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Десктоп: навигация в строку, кнопка рядом, бургер скрыт */
+@media (min-width: 900px) {
+  .header__nav {
+    position: static;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+    padding: 0;
+    background-color: transparent;
+    border-bottom: none;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .header__nav-list {
+    flex-direction: row;
+    gap: 4px;
+  }
+
+  .header__nav-link {
+    padding: 8px 12px;
+  }
+
+  .header__cta {
+    width: auto;
+    padding: 10px 20px;
+  }
+
+  .header__burger {
+    display: none;
+  }
+}

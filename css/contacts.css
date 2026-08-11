@@ -1,0 +1,70 @@
+/* ==========================================================================
+   contacts.css — секция «Контакты»: контактные данные и форма заявки
+   ========================================================================== */
+
+.contacts__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+.contacts__info p {
+  margin-bottom: 16px;
+  color: var(--color-text-muted);
+}
+
+.contacts__link {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--color-text);
+  transition: color 0.2s ease;
+}
+
+.contacts__link:hover {
+  color: var(--color-accent-violet);
+}
+
+/* Форма заявки */
+.contacts__form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contacts__label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.contacts__input,
+.contacts__textarea {
+  font: inherit;
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 12px 16px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.contacts__input:focus,
+.contacts__textarea:focus {
+  border-color: var(--color-accent-violet);
+}
+
+.contacts__textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Десктоп: два столбца */
+@media (min-width: 900px) {
+  .contacts__inner {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}

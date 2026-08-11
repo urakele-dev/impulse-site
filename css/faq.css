@@ -1,0 +1,56 @@
+/* ==========================================================================
+   faq.css — секция «FAQ»: нативный аккордеон на details/summary
+   ========================================================================== */
+
+.faq__list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 800px;
+}
+
+.faq__item {
+  padding: 20px 24px;
+}
+
+.faq__question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  cursor: pointer;
+  list-style: none;
+}
+
+/* Убираем стандартный маркер details/summary */
+.faq__question::-webkit-details-marker {
+  display: none;
+}
+
+.faq__question h3 {
+  font-family: var(--font-heading);
+  font-size: 1.0625rem;
+  font-weight: 700;
+}
+
+/* Иконка «плюс» с градиентом */
+.faq__question::after {
+  content: "+";
+  font-size: 1.5rem;
+  line-height: 1;
+  background-image: var(--gradient-accent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: transform 0.2s ease;
+}
+
+.faq__item[open] .faq__question::after {
+  transform: rotate(45deg);
+}
+
+.faq__answer {
+  margin-top: 12px;
+  color: var(--color-text-muted);
+  font-size: 0.9375rem;
+}
