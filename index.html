@@ -1,126 +1,891 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Импульс Digital</title>
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/hero.css">
-    <link rel="stylesheet" href="css/services.css">
-    <link rel="stylesheet" href="css/process.css">
-    <link rel="stylesheet" href="css/portfolio.css">
-    <link rel="stylesheet" href="css/pricing.css">
-    <link rel="stylesheet" href="css/faq.css">
-    <link rel="stylesheet" href="css/contacts.css">
-    <link rel="stylesheet" href="css/footer.css">
-</head>
-<body>
-    <header id="header">
-        <div class="container">
-            <a href="#hero">Импульс<span>digital</span></a>
-            <nav id="site-nav">
-                <a href="#services">Услуги</a>
-                <a href="#portfolio">Портфолио</a>
-                <a href="#pricing">Тарифы</a>
-                <a href="#contacts">Контакты</a>
-            </nav>
-            <button class="order-btn">Заказать</button>
-            <button id="burger" aria-label="Открыть меню"><span></span></button>
-        </div>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0f1117" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230f1117'/%3E%3Cpath fill='%237c5cff' d='M16 18h32v10H38v20H26V28H16z'/%3E%3C/svg%3E"
+      type="image/svg+xml"
+    />
+    <meta
+      name="description"
+      content="Импульс — digital-студия в России: лендинги, Telegram-боты, веб-боты, парсеры и интеграции для бизнеса."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta
+      property="og:title"
+      content="Импульс — digital-студия для бизнеса в России"
+    />
+    <meta
+      property="og:description"
+      content="Разрабатываем сайты, Telegram-ботов и автоматизацию для малого бизнеса, ИП и стартапов."
+    />
+    <meta property="og:site_name" content="Импульс" />
+    <title>Импульс — digital-студия для бизнеса в России</title>
+    <style>
+      :root {
+        --bg: #0f1117;
+        --surface: #171a24;
+        --surface-light: #202433;
+        --text: #f7f8ff;
+        --muted: #9da4bb;
+        --line: rgba(255, 255, 255, 0.1);
+        --accent: #7c5cff;
+        --blue: #4ea8ff;
+        --gradient: linear-gradient(110deg, #7c5cff, #4ea8ff);
+        --radius: 16px;
+        --shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font:
+          16px/1.6 Inter,
+          Manrope,
+          Arial,
+          sans-serif;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      button,
+      input,
+      textarea {
+        font: inherit;
+      }
+      .container {
+        width: min(1120px, calc(100% - 40px));
+        margin: auto;
+      }
+      .section {
+        padding: 112px 0;
+      }
+      .section:nth-of-type(even) {
+        background: linear-gradient(
+          180deg,
+          transparent,
+          rgba(124, 92, 255, 0.035),
+          transparent
+        );
+      }
+      .section-head {
+        max-width: 680px;
+        margin-bottom: 40px;
+      }
+      .eyebrow {
+        color: var(--blue);
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+      h1 {
+        max-width: 760px;
+        margin-bottom: 24px;
+        font-size: clamp(2.7rem, 7vw, 5.8rem);
+        line-height: 0.98;
+        letter-spacing: -0.06em;
+      }
+      h2 {
+        margin-bottom: 16px;
+        font-size: clamp(2rem, 4vw, 3.4rem);
+        line-height: 1.05;
+        letter-spacing: -0.045em;
+      }
+      h3 {
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+      }
+      .lead {
+        color: var(--muted);
+        font-size: 1.12rem;
+      }
+      .gradient-text {
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 50px;
+        padding: 0 22px;
+        border: 0;
+        border-radius: 10px;
+        background: var(--gradient);
+        color: white;
+        font-weight: 800;
+        cursor: pointer;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+      }
+      .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 28px rgba(100, 90, 255, 0.3);
+      }
+      .btn-secondary {
+        border: 1px solid var(--line);
+        background: transparent;
+      }
+      .site-header {
+        position: fixed;
+        z-index: 10;
+        top: 0;
+        width: 100%;
+        border-bottom: 1px solid var(--line);
+        background: rgba(15, 17, 23, 0.82);
+        backdrop-filter: blur(16px);
+      }
+      .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 72px;
+      }
+      .logo {
+        font-size: 1.3rem;
+        font-weight: 900;
+        letter-spacing: -0.05em;
+      }
+      .logo-mark {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        margin-right: 7px;
+        border-radius: 4px;
+        background: var(--gradient);
+      }
+      .nav {
+        display: flex;
+        gap: 24px;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+      .nav a:hover {
+        color: var(--text);
+      }
+      .burger {
+        display: none;
+        border: 0;
+        background: none;
+        color: white;
+        font-size: 1.6rem;
+        cursor: pointer;
+      }
+      .hero {
+        position: relative;
+        overflow: hidden;
+        padding: 190px 0 120px;
+      }
+      .hero::before {
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        right: -10%;
+        width: 620px;
+        height: 620px;
+        border-radius: 50%;
+        background: #4c3baa;
+        filter: blur(130px);
+        opacity: 0.22;
+        content: "";
+      }
+      .hero .lead {
+        max-width: 570px;
+        margin-bottom: 32px;
+      }
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      .grid {
+        display: grid;
+        gap: 18px;
+      }
+      .services-grid {
+        grid-template-columns: repeat(5, 1fr);
+      }
+      .card {
+        position: relative;
+        overflow: hidden;
+        padding: 28px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: var(--surface);
+        box-shadow: var(--shadow);
+        transition:
+          transform 0.25s,
+          border-color 0.25s;
+      }
+      .card::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: var(--gradient);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.3s ease;
+        content: "";
+      }
+      .card:hover,
+      .card:focus-within {
+        transform: translateY(-6px);
+        border-color: rgba(124, 92, 255, 0.65);
+      }
+      .card:hover::before,
+      .card:focus-within::before {
+        transform: scaleX(1);
+      }
+      .card p {
+        margin-bottom: 0;
+        color: var(--muted);
+        font-size: 0.93rem;
+      }
+      .icon {
+        display: grid;
+        place-items: center;
+        width: 42px;
+        height: 42px;
+        margin-bottom: 22px;
+        border-radius: 12px;
+        background: rgba(124, 92, 255, 0.16);
+        color: #b9afff;
+        font-size: 1.3rem;
+      }
+      .steps-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      .step-badge {
+        display: inline-block;
+        margin-bottom: 42px;
+        color: var(--blue);
+        font-size: 0.8rem;
+        font-weight: 900;
+        letter-spacing: 0.1em;
+      }
+      .portfolio-grid,
+      .pricing-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .project-cover {
+        display: flex;
+        align-items: flex-end;
+        height: 190px;
+        margin: -26px -26px 22px;
+        padding: 20px;
+        border-radius: 16px 16px 0 0;
+        background: var(--gradient);
+        font-size: 1.5rem;
+        font-weight: 900;
+      }
+      .cover-two {
+        background: linear-gradient(135deg, #1b7f89, #72e0ca);
+      }
+      .cover-three {
+        background: linear-gradient(135deg, #e68a46, #ffcf70);
+        color: #241710;
+      }
+      .project-meta {
+        color: var(--muted);
+        font-size: 0.85rem;
+      }
+      .price {
+        margin: 20px 0;
+        font-size: 2.3rem;
+        font-weight: 900;
+        letter-spacing: -0.05em;
+      }
+      .price small {
+        color: var(--muted);
+        font-size: 0.9rem;
+        font-weight: 500;
+      }
+      .features {
+        min-height: 150px;
+        margin: 0 0 24px;
+        padding: 0;
+        list-style: none;
+        color: var(--muted);
+      }
+      .features li {
+        margin: 9px 0;
+      }
+      .features li::before {
+        margin-right: 8px;
+        color: var(--blue);
+        content: "✓";
+      }
+      .featured {
+        position: relative;
+        border-color: var(--accent);
+        background: linear-gradient(
+          160deg,
+          rgba(124, 92, 255, 0.2),
+          var(--surface) 45%
+        );
+      }
+      .popular {
+        position: absolute;
+        top: 18px;
+        right: 18px;
+        padding: 4px 10px;
+        border-radius: 30px;
+        background: var(--gradient);
+        font-size: 0.72rem;
+        font-weight: 800;
+      }
+      .faq {
+        max-width: 780px;
+      }
+      details {
+        border-bottom: 1px solid var(--line);
+      }
+      summary {
+        padding: 22px 0;
+        cursor: pointer;
+        font-weight: 800;
+        list-style: none;
+      }
+      summary::after {
+        float: right;
+        color: var(--blue);
+        content: "+";
+        font-size: 1.4rem;
+      }
+      details[open] summary::after {
+        content: "−";
+      }
+      details p {
+        max-width: 680px;
+        padding: 0 30px 22px 0;
+        color: var(--muted);
+      }
+      .contact-box {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 60px;
+        padding: 48px;
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        background: var(--surface);
+      }
+      .contact-list {
+        padding: 0;
+        list-style: none;
+        color: var(--muted);
+      }
+      .contact-list li {
+        margin: 14px 0;
+      }
+      form {
+        display: grid;
+        gap: 14px;
+      }
+      label {
+        color: var(--muted);
+        font-size: 0.85rem;
+      }
+      input,
+      textarea {
+        width: 100%;
+        margin-top: 6px;
+        padding: 14px 16px;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        outline: none;
+        background: var(--bg);
+        color: var(--text);
+      }
+      input:focus,
+      textarea:focus {
+        border-color: var(--accent);
+      }
+      textarea {
+        min-height: 110px;
+        resize: vertical;
+      }
+      .form-note {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.78rem;
+      }
+      .site-footer {
+        padding: 30px 0;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+      }
+      .footer-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+      }
+      .footer-links {
+        display: flex;
+        gap: 18px;
+        font-size: 0.9rem;
+      }
+      .reveal {
+        animation: rise 0.7s both;
+      }
+      .section-head::after {
+        display: block;
+        width: 64px;
+        height: 3px;
+        margin-top: 22px;
+        border-radius: 4px;
+        background: var(--gradient);
+        content: "";
+      }
+      @keyframes rise {
+        from {
+          opacity: 0;
+          transform: translateY(16px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      @media (max-width: 1100px) {
+        .services-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+      @media (max-width: 900px) {
+        .container {
+          width: min(100% - 32px, 760px);
+        }
+        .services-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .steps-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 700px) {
+        .container {
+          width: min(100% - 28px, 560px);
+        }
+        .section {
+          padding: 76px 0;
+        }
+        .nav {
+          display: none;
+          position: absolute;
+          top: 72px;
+          right: 14px;
+          left: 14px;
+          flex-direction: column;
+          gap: 0;
+          padding: 12px;
+          border: 1px solid var(--line);
+          border-radius: 12px;
+          background: var(--surface);
+        }
+        .nav.open {
+          display: flex;
+        }
+        .nav a {
+          padding: 10px;
+        }
+        .burger {
+          display: block;
+        }
+        .hero {
+          padding: 140px 0 80px;
+        }
+        .hero-actions,
+        .hero-actions .btn {
+          width: 100%;
+        }
+        .portfolio-grid,
+        .pricing-grid,
+        .contact-box {
+          grid-template-columns: 1fr;
+        }
+        .contact-box {
+          padding: 28px;
+          gap: 30px;
+        }
+        .footer-inner {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+      }
+      @media (max-width: 600px) {
+        .card {
+          padding: 22px;
+        }
+        .project-cover {
+          margin: -22px -22px 20px;
+        }
+        .contact-box {
+          padding: 22px;
+        }
+      }
+      @media (max-width: 420px) {
+        .services-grid,
+        .steps-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="#top" aria-label="Импульс — на главную"
+          ><span class="logo-mark"></span>импульс</a
+        >
+        <nav class="nav" id="main-nav" aria-label="Основная навигация">
+          <a href="#services">Услуги</a><a href="#process">Этапы</a
+          ><a href="#portfolio">Кейсы</a><a href="#pricing">Тарифы</a
+          ><a href="#contact">Контакты</a>
+        </nav>
+        <button
+          class="burger"
+          type="button"
+          aria-label="Открыть меню"
+          aria-controls="main-nav"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+      </div>
     </header>
-
-    <main>
-        <section id="hero" class="hero">
-            <div class="container">
-                <h1>Разработка сайтов и ботов</h1>
-                <p>Автоматизируем ваш бизнес с помощью современных технологий.</p>
-            </div>
-        </section>
-
-        <section id="services" class="services">
-            <div class="container">
-                <h2>Услуги</h2>
-            </div>
-        </section>
-
-        <section id="portfolio" class="portfolio">
-            <div class="container">
-                <h2>Портфолио</h2>
-            </div>
-        </section>
-
-        <section id="pricing" class="pricing">
-            <div class="container">
-                <h2>Тарифы</h2>
-            </div>
-        </section>
-
-        <section id="faq" class="faq">
-            <div class="container">
-                <h2>FAQ</h2>
-                <details>
-                    <summary>Как происходит оплата?</summary>
-                    <p>Работаем по предоплате 50%, остаток — после сдачи проекта.</p>
-                </details>
-                <details>
-                    <summary>Что нужно от меня?</summary>
-                    <p>Техническое задание, логотип и контент (тексты/фото).</p>
-                </details>
-                <details>
-                    <summary>Входят ли правки в стоимость?</summary>
-                    <p>Да, до 3 итераций правок включены в каждый тариф.</p>
-                </details>
-                <details>
-                    <summary>Есть ли гарантия?</summary>
-                    <p>Да, техническая гарантия на работоспособность — 6 месяцев.</p>
-                </details>
-                <details>
-                    <summary>Поддержка после запуска?</summary>
-                    <p>Предлагаем ежемесячное сопровождение по фиксированной цене.</p>
-                </details>
-                <details>
-                    <summary>Кому нужен Telegram-бот?</summary>
-                    <p>Бизнесу для автоматизации записи, продаж и поддержки клиентов.</p>
-                </details>
-            </div>
-        </section>
-
-        <section id="contacts" class="contacts">
-            <div class="container">
-                <h2>Контакты</h2>
-                <div class="contacts-wrapper">
-                    <form id="contactForm">
-                        <input type="text" id="name" placeholder="Ваше имя" required>
-                        <input type="text" id="contact" placeholder="Телефон или Telegram" required>
-                        <textarea id="message" placeholder="Описание задачи" required></textarea>
-                        <button type="submit">Отправить</button>
-                    </form>
-                    <div class="contacts-info">
-                        <a href="https://t.me/impulse_digital">Telegram</a>
-                        <a href="https://wa.me/79990000000">WhatsApp</a>
-                        <a href="mailto:hello@impulse.digital">hello@impulse.digital</a>
-                        <p>+7 (999) 000-00-00</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container footer__inner">
-            <a class="footer__logo" href="#hero">Импульс<span class="header__logo-accent">digital</span></a>
-            <nav class="footer__nav" aria-label="Навигация в подвале">
-                <a class="footer__nav-link" href="#services">Услуги</a>
-                <a class="footer__nav-link" href="#portfolio">Портфолио</a>
-                <a class="footer__nav-link" href="#pricing">Тарифы</a>
-                <a class="footer__nav-link" href="#contacts">Контакты</a>
-            </nav>
-            <p class="footer__copy">© <span id="year">2026</span> Студия «Импульс». Все права защищены.</p>
+    <main id="top">
+      <section class="hero">
+        <div class="container reveal">
+          <span class="eyebrow">Импульс — digital-студия в России</span>
+          <h1>
+            Запускаем цифровые решения,
+            <span class="gradient-text">которые приносят результат</span>
+          </h1>
+          <p class="lead">
+            Лендинги, Telegram-боты, веб-боты и автоматизация для малого
+            бизнеса, ИП и стартапов по всей России. Берём задачу от идеи до
+            запуска.
+          </p>
+          <div class="hero-actions">
+            <a class="btn" href="#contact">Обсудить проект</a
+            ><a class="btn btn-secondary" href="#portfolio">Смотреть кейсы</a>
+          </div>
         </div>
+      </section>
+      <section class="section" id="services">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">Что делаем</span>
+            <h2>Инструменты для вашего бизнеса</h2>
+          </div>
+          <div class="grid services-grid">
+            <article class="card">
+              <div class="icon">◈</div>
+              <h3>Лендинги</h3>
+              <p>
+                Страницы для запуска продукта и привлечения заявок — от 25 000
+                ₽.
+              </p>
+            </article>
+            <article class="card">
+              <div class="icon">✦</div>
+              <h3>Telegram-боты</h3>
+              <p>
+                Боты для заявок, продаж, поддержки и автоматизации — от 15 000
+                ₽.
+              </p>
+            </article>
+            <article class="card">
+              <div class="icon">⌘</div>
+              <h3>Веб-боты и парсеры</h3>
+              <p>
+                Собираем данные и автоматизируем повторяющиеся операции — от 20
+                000 ₽.
+              </p>
+            </article>
+            <article class="card">
+              <div class="icon">↗</div>
+              <h3>Интеграции</h3>
+              <p>Связываем CRM, формы, таблицы и мессенджеры — от 10 000 ₽.</p>
+            </article>
+            <article class="card">
+              <div class="icon">◎</div>
+              <h3>Техподдержка</h3>
+              <p>
+                Исправления, обновления и развитие проекта — от 5 000 ₽/мес.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="process">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">Как работаем</span>
+            <h2>От задачи до результата</h2>
+          </div>
+          <div class="grid steps-grid">
+            <article class="card">
+              <span class="step-badge">01</span>
+              <h3>Погружаемся</h3>
+              <p>Изучаем задачу, аудиторию и цели проекта.</p>
+            </article>
+            <article class="card">
+              <span class="step-badge">02</span>
+              <h3>Проектируем</h3>
+              <p>Собираем структуру и сценарии будущего продукта.</p>
+            </article>
+            <article class="card">
+              <span class="step-badge">03</span>
+              <h3>Создаём</h3>
+              <p>Разрабатываем, показываем промежуточный результат.</p>
+            </article>
+            <article class="card">
+              <span class="step-badge">04</span>
+              <h3>Запускаем</h3>
+              <p>Проверяем всё перед релизом и передаём проект вам.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="portfolio">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">Избранные проекты</span>
+            <h2>Работы, которыми гордимся</h2>
+          </div>
+          <div class="grid portfolio-grid">
+            <article class="card">
+              <div class="project-cover">Сервис доставки</div>
+              <h3>Быстрый заказ</h3>
+              <p>
+                Лендинг для региональной доставки: конверсия в заявку выросла до
+                8,4%.
+              </p>
+              <span class="project-meta">Лендинг · конверсия 8,4% · 2026</span>
+            </article>
+            <article class="card">
+              <div class="project-cover cover-two">Telegram-помощник</div>
+              <h3>Бот для команды</h3>
+              <p>
+                Telegram-бот распределяет заявки и уведомляет менеджеров,
+                автоматизируя 70% рутины.
+              </p>
+              <span class="project-meta"
+                >Telegram · автоматизация 70% · 2026</span
+              >
+            </article>
+            <article class="card">
+              <div class="project-cover cover-three">Онлайн-школа</div>
+              <h3>Новый поток</h3>
+              <p>
+                Веб-бот для записи на обучение сократил время обработки заявки с
+                15 до 3 минут.
+              </p>
+              <span class="project-meta">Веб-бот · время −80% · 2026</span>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="pricing">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">Прозрачная стоимость</span>
+            <h2>Выберите формат старта</h2>
+          </div>
+          <div class="grid pricing-grid">
+            <article class="card">
+              <h3>Старт</h3>
+              <p>Для первого запуска</p>
+              <div class="price">25 000 ₽</div>
+              <ul class="features">
+                <li>Одностраничный лендинг</li>
+                <li>Адаптивная вёрстка</li>
+                <li>Запуск за 10–14 дней</li>
+              </ul>
+              <a class="btn btn-secondary" href="#contact">Выбрать</a>
+            </article>
+            <article class="card featured">
+              <span class="popular">ПОПУЛЯРНЫЙ</span>
+              <h3>Бизнес</h3>
+              <p>Для растущего бизнеса</p>
+              <div class="price">60 000 ₽</div>
+              <ul class="features">
+                <li>Сайт до 7 страниц</li>
+                <li>Интеграции и аналитика</li>
+                <li>Поддержка 30 дней</li>
+              </ul>
+              <a class="btn" href="#contact">Выбрать</a>
+            </article>
+            <article class="card">
+              <h3>Под ключ</h3>
+              <p>Комплексная автоматизация</p>
+              <div class="price">120 000 ₽</div>
+              <ul class="features">
+                <li>Сайт и Telegram-бот</li>
+                <li>Связка с сервисами</li>
+                <li>Индивидуальная команда</li>
+              </ul>
+              <a class="btn btn-secondary" href="#contact">Выбрать</a>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="faq">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">FAQ</span>
+            <h2>Отвечаем на вопросы</h2>
+          </div>
+          <div class="faq">
+            <details>
+              <summary>Сколько длится разработка?</summary>
+              <p>
+                Обычно сайт занимает от 10 до 30 рабочих дней. Точный срок
+                определим после обсуждения задачи.
+              </p>
+            </details>
+            <details>
+              <summary>Можно ли начать с небольшого бюджета?</summary>
+              <p>
+                Да. Предложим минимальную версию продукта, которую можно
+                развивать по мере роста бизнеса.
+              </p>
+            </details>
+            <details>
+              <summary>Что будет после запуска?</summary>
+              <p>
+                Передадим доступы и инструкции, а при необходимости подключим
+                техническую поддержку.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="contact">
+        <div class="container contact-box">
+          <div>
+            <span class="eyebrow">Есть идея?</span>
+            <h2>Давайте обсудим её</h2>
+            <p class="lead">
+              Расскажите о задаче — ответим в течение рабочего дня и предложим
+              следующий шаг.
+            </p>
+            <ul class="contact-list">
+              <li>✉ urakele@gmail.com</li>
+              <li>◉ <a href="https://t.me/username">@username</a></li>
+              <li>☎ <a href="tel:+79953011810">8 995 301-18-10</a></li>
+              <li>⌕ Работаем удалённо по всей России</li>
+            </ul>
+          </div>
+          <form id="contact-form">
+            <label
+              >Ваше имя<input
+                name="name"
+                type="text"
+                placeholder="Как к вам обращаться?"
+                required /></label
+            ><label
+              >Контакт для связи<input
+                name="contact"
+                type="text"
+                placeholder="Telegram или e-mail"
+                required /></label
+            ><label
+              >О проекте<textarea
+                name="task"
+                placeholder="Коротко о вашей задаче"
+                required
+              ></textarea></label
+            ><button class="btn" type="submit">Отправить заявку</button>
+            <p class="form-note" id="form-status" aria-live="polite">
+              Нажимая кнопку, вы соглашаетесь на обработку данных.
+            </p>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <span>© 2026 «Импульс»</span>
+        <div class="footer-links">
+          <a href="#services">Услуги</a><a href="#contact">Связаться</a>
+        </div>
+      </div>
     </footer>
+    <script>
+      // Мобильное меню и отправка заявки в Telegram.
+      const burger = document.querySelector(".burger");
+      const nav = document.querySelector(".nav");
+      burger.addEventListener("click", () => {
+        const isOpen = nav.classList.toggle("open");
+        burger.setAttribute("aria-expanded", String(isOpen));
+        burger.setAttribute(
+          "aria-label",
+          isOpen ? "Закрыть меню" : "Открыть меню",
+        );
+      });
+      nav.querySelectorAll("a").forEach((link) =>
+        link.addEventListener("click", () => {
+          nav.classList.remove("open");
+          burger.setAttribute("aria-expanded", "false");
+        }),
+      );
+      const contactForm = document.querySelector("#contact-form");
+      const formStatus = document.querySelector("#form-status");
 
-    <button id="scrollTop" onclick="window.scrollTo(0,0)">Наверх</button>
-    <script src="js/main.js"></script>
-</body>
+      contactForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const submitButton = contactForm.querySelector('[type="submit"]');
+        const formData = new FormData(contactForm);
+
+        submitButton.disabled = true;
+        formStatus.textContent = "Отправляем заявку…";
+
+        try {
+          const response = await fetch("/.netlify/functions/send-telegram", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(Object.fromEntries(formData)),
+          });
+          const result = await response.json();
+
+          if (!response.ok || !result.ok) {
+            throw new Error(result.error || "Сервис заявок недоступен.");
+          }
+
+          formStatus.textContent = "✓ Заявка отправлена";
+          contactForm.reset();
+        } catch (error) {
+          formStatus.textContent = `Не удалось отправить заявку: ${error.message}`;
+        } finally {
+          submitButton.disabled = false;
+        }
+      });
+    </script>
+  </body>
 </html>
