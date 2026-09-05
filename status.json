@@ -174,7 +174,7 @@
       "status": "не начато"
     }
   ],
-  "current_action": "Фаза 6: создана серверная функция Netlify и форма подготовлена к безопасной отправке в Telegram; ожидаются публикация, настройка переменных среды и проверка с телефона.",
+  "current_action": "Фаза 6: код формы и Netlify-функция закоммичены; ожидаются публикация через Netlify Drop, настройка TG_BOT_TOKEN/TG_CHAT_ID, проверка с телефона и релизный commit.",
   "input_tokens": 890607,
   "output_tokens": 9181,
   "total": {
@@ -246,7 +246,10 @@
     "Создана netlify/functions/send-telegram.js: функция принимает POST-поля name, contact, task и использует только TG_BOT_TOKEN и TG_CHAT_ID.",
     "Секция формы index.html отправляет POST на /.netlify/functions/send-telegram; поле message переименовано в task и сделано обязательным.",
     "Проверка синтаксиса Node.js отложена: Node.js не найден в PATH.",
-    "Реальные данные Roo Code: задач 3, input=890607, output=9181, cost=$0.13239385."
+    "Реальные данные Roo Code: задач 3, input=890607, output=9181, cost=$0.13239385.",
+    "Фаза 6: создан commit 8a9eb7e «Форма Netlify» с index.html, status.json и netlify/functions/send-telegram.js.",
+    "git diff --check пройден; git diff --stat commit: index.html 999 строк, netlify/functions/send-telegram.js 67 строк, status.json 265 строк.",
+    "PROPOSALS.md обновлён: добавлены предложения проверить og:url/og:image и выполнить тестовую отправку после настройки Netlify."
   ],
   "tasks": [
     {
