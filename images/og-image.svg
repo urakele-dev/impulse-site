@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Импульс — digital-студия</title>
+  <desc id="desc">Сайты, Telegram-боты и автоматизация для бизнеса</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f1117"/>
+      <stop offset="1" stop-color="#251b4d"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7c5cff"/>
+      <stop offset="1" stop-color="#4f9cff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#background)"/>
+  <circle cx="1020" cy="70" r="250" fill="#7c5cff" opacity=".16"/>
+  <circle cx="1080" cy="560" r="300" fill="#4f9cff" opacity=".12"/>
+  <rect x="88" y="96" width="92" height="92" rx="22" fill="#171a24" stroke="#7c5cff" stroke-width="3"/>
+  <path fill="url(#accent)" d="M110 116h48v22h-15v44h-26v-44h-7z"/>
+  <text x="88" y="300" fill="#f7f8ff" font-family="Inter,Manrope,Arial,sans-serif" font-size="76" font-weight="700">Импульс</text>
+  <text x="92" y="372" fill="#b9b5ff" font-family="Inter,Manrope,Arial,sans-serif" font-size="32">digital-студия для бизнеса</text>
+  <rect x="92" y="440" width="270" height="6" rx="3" fill="url(#accent)"/>
+</svg>

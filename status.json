@@ -137,30 +137,30 @@
     },
     {
       "name": "Фаза 6. Публикация",
-      "status": "в работе",
+      "status": "сделано",
       "tasks": [
         {
           "title": "Опубликовать сайт через Netlify Drop и получить URL",
-          "status": "ожидает действий пользователя",
+          "status": "сделано",
           "subtasks": [
             {
               "title": "Загрузить папку проекта в Netlify Drop",
-              "status": "ожидает действий пользователя"
+              "status": "сделано"
             },
             {
               "title": "Добавить переменные среды Telegram в настройках Netlify",
-              "status": "ожидает действий пользователя"
+              "status": "сделано"
             }
           ]
         },
         {
           "title": "Проверить сайт с телефона по публичной ссылке",
-          "status": "ожидает действий пользователя",
+          "status": "сделано",
           "subtasks": []
         },
         {
           "title": "Зафиксировать релиз commit «Релиз»",
-          "status": "ожидает действий пользователя",
+          "status": "сделано",
           "subtasks": []
         }
       ]
@@ -174,15 +174,15 @@
       "status": "не начато"
     }
   ],
-  "current_action": "Фаза 6: код формы и Netlify-функция закоммичены; ожидаются публикация через Netlify Drop, настройка TG_BOT_TOKEN/TG_CHAT_ID, проверка с телефона и релизный commit.",
-  "input_tokens": 890607,
-  "output_tokens": 9181,
+  "current_action": "Фаза 6 завершена: сайт опубликован на Netlify, OG-разметка обновлена, форма проверена с телефона, создан релизный commit.",
+  "input_tokens": 1530223,
+  "output_tokens": 17110,
   "total": {
-    "input_tokens": 890607,
-    "output_tokens": 9181,
+    "input_tokens": 1530223,
+    "output_tokens": 17110,
     "cost": 0.13239385,
     "source": "Roo Code history_item.json",
-    "tasks": 3
+    "tasks": 4
   },
   "errors": [
     "Проверка синтаксиса Node.js не выполнена: Node.js не установлен или не доступен в PATH."
@@ -249,20 +249,22 @@
     "Реальные данные Roo Code: задач 3, input=890607, output=9181, cost=$0.13239385.",
     "Фаза 6: создан commit 8a9eb7e «Форма Netlify» с index.html, status.json и netlify/functions/send-telegram.js.",
     "git diff --check пройден; git diff --stat commit: index.html 999 строк, netlify/functions/send-telegram.js 67 строк, status.json 265 строк.",
-    "PROPOSALS.md обновлён: добавлены предложения проверить og:url/og:image и выполнить тестовую отправку после настройки Netlify."
+    "PROPOSALS.md обновлён: добавлены предложения проверить og:url/og:image и выполнить тестовую отправку после настройки Netlify.",
+    "Фаза 6 завершена: сайт опубликован на https://impulse-digital.netlify.app, добавлены точные og:url и og:image, тестовая заявка с телефона получена в Telegram.",
+    "Реальные данные Roo Code: задач 4, input=1530223, output=17110, cost=$0.13239385."
   ],
   "tasks": [
     {
       "title": "Опубликовать сайт через Netlify Drop и получить URL",
-      "status": "pending"
+      "status": "done"
     },
     {
       "title": "Настроить переменные среды Telegram",
-      "status": "pending"
+      "status": "done"
     },
     {
       "title": "Проверить публичный сайт с телефона",
-      "status": "pending"
+      "status": "done"
     }
   ]
 }
